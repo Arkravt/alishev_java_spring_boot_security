@@ -16,23 +16,23 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableMethodSecurity
 public class SecurityConfig {
 
-    @Bean // Возвращаем кастомный PersonDetailsService, который напишем далее
-    public UserDetailsService userDetailsService() {
-        return new PersonDetailsService();
-    }
-
-    @Bean
-    public AuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        provider.setUserDetailsService(userDetailsService());
-        provider.setPasswordEncoder(passwordEncoder());
-        return provider;
-    }
-
-    @Bean // Ставим степень кодировки, с которой кодировали пароль в базе
-    public PasswordEncoder passwordEncoder() {
-        //return new BCryptPasswordEncoder(5);
-        return NoOpPasswordEncoder.getInstance();
-    }
+//    @Bean // Возвращаем кастомный PersonDetailsService, который напишем далее
+//    public UserDetailsService userDetailsService() {
+//        return new PersonDetailsService();
+//    }
+//
+//    @Bean
+//    public AuthenticationProvider authenticationProvider() {
+//        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+//        provider.setUserDetailsService(userDetailsService());
+//        provider.setPasswordEncoder(passwordEncoder());
+//        return provider;
+//    }
+//
+//    @Bean // Ставим степень кодировки, с которой кодировали пароль в базе
+//    public PasswordEncoder passwordEncoder() {
+//        //return new BCryptPasswordEncoder(5);
+//        return NoOpPasswordEncoder.getInstance();
+//    }
 
 }
